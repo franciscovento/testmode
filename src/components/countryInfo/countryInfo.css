@@ -1,0 +1,14 @@
+.countryInfo a {
+  color: blue;
+  text-decoration: none;
+  transition: 0.5s all ease;
+}
+
+.countryInfo a:hover {
+  transform: scale(0.7);
+  color: red;
+}
+
+.noExistePais {
+  margin-top: 10px;
+}

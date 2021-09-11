@@ -1,0 +1,71 @@
+.homePage {
+  width: 100vw;
+  height: 100vh;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: 1.5s all ease;
+}
+
+@media (max-width: 900px) {
+  .homePage {
+    background-size: contain;
+  }
+}
+
+.homePage-content {
+  background-color: white;
+  margin: 20px;
+  padding: 20px 40px;
+  width: 400px;
+  min-height: 200px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@media (max-width: 420px) {
+  .homePage-content {
+    width: 90%;
+  }
+}
+
+.homePage-content-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.homePage-content-form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+  outline: none;
+  background-color: #dfe;
+  border: 0;
+}
+
+.homePage-content-form button {
+  width: 100px;
+  float: right;
+  border: none;
+  padding: 5px 0px;
+  background-color: #2ebb8c;
+  color: white;
+  transition: 0.5s all ease;
+  cursor: pointer;
+}
+
+.homePage-content-form button::after {
+  content: " →";
+}
+
+.homePage-content-form button:hover {
+  background-color: white;
+  text-decoration: underline;
+  color: #2ebb8c;
+}
