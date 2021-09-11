@@ -7,7 +7,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: 0.5s all ease;
   position: relative;
 }
 
@@ -19,7 +18,6 @@
 .detailsPage__imgContainer {
   width: 400px;
   height: 200px;
-  object-fit: cover;
 }
 
 @media (max-width: 450px) {

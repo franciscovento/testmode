@@ -1,14 +1,20 @@
 import './App.css';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import {useState } from 'react';
 import axios from 'axios';
 import HomePage from './views/HomePage';
 import DetailsPage from './views/DetailsPage';
 import NotFoundPage from './views/NotFoundPage';
+import { AnimatePresence} from 'framer-motion'
 
 
 
 function App() {
+
+  
+const location = useLocation();
+
+
   const [countries, setCountries] = useState([]);
   const [flag, setFlag] = useState(false);
 
@@ -34,8 +40,9 @@ const handleSearch = (name) => {
 
   return (
     <div className="App">
-     <Router>
-       <Switch>
+     {/* <Router> */}
+       <AnimatePresence exitBeforeEnter >
+       <Switch location={location} key={location.pathname} >
           <Route path='/details/:id'>
             <DetailsPage />
           </Route>
@@ -44,7 +51,8 @@ const handleSearch = (name) => {
           </Route>
           <Route path='*' component={NotFoundPage}/>
        </Switch>
-     </Router>
+       </AnimatePresence>
+     {/* </Router> */}
     </div>
   );
 }

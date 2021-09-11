@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './homePage.css';
 import CountryInfo from '../components/countryInfo/CountryInfo';
 import { useEffect } from 'react/cjs/react.development';
+import { motion } from 'framer-motion';
+import { Transitions, pageTransition } from '../transitions/transitions';
 
 const HomePage = ({handleSearch, countries, flag}) => {
 
@@ -25,7 +27,7 @@ const HomePage = ({handleSearch, countries, flag}) => {
     },[countries, flag])
 
   return (
-    <div className='homePage' style={{backgroundImage:`url(${background})`}}>
+    <motion.div initial="out"  animate="in" exit="out" variants={Transitions} transition={pageTransition} className='homePage' style={{backgroundImage:`url(${background})`}}>
       <div className='homePage-content'>
        
       <div className='homePage-content-form'>
@@ -35,7 +37,7 @@ const HomePage = ({handleSearch, countries, flag}) => {
       </div>
       <CountryInfo countries={countries} flag={flag}/>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

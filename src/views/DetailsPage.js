@@ -3,6 +3,8 @@ import { useParams } from 'react-router'
 import axios from 'axios';
 import './detailsPage.css'
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import {Transitions, pageTransition} from '../transitions/transitions';
 
 
 
@@ -26,10 +28,8 @@ useEffect(()=>{
 
 
 
-
-console.log(countrie)
   return (
-    <div className='detailsPage'>
+    <motion.div initial="out"  animate="in" exit="out" variants={Transitions} transition={pageTransition} className='detailsPage'>
       {countrie && 
       <div>
       <div className='detailsPage__titulo'>
@@ -60,7 +60,7 @@ console.log(countrie)
       
       </div>  
       }
-    </div>
+    </motion.div>
   )
 }
 
