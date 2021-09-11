@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './homePage.css';
 import CountryInfo from '../components/countryInfo/CountryInfo';
-import { useEffect } from 'react/cjs/react.development';
 import { motion } from 'framer-motion';
 import { Transitions, pageTransition } from '../transitions/transitions';
 
