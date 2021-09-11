@@ -43,13 +43,13 @@ useEffect(()=>{
       </div>
       <div className='detailsPAge__info'>
       <div className='detailsPAge__info__item'><span>Fronteras:</span> {countrie[0].borders.map((x,i) => <p key={i}>{x}</p> )}</div>
-     <div className='detailsPAge__info__item'><span>Área Geográfica:</span> <p>{countrie[0].area.toLocaleString('en-US')}</p></div> 
+     <div className='detailsPAge__info__item'><span>Área Geográfica:</span> <p>{countrie[0].area && countrie[0].area.toLocaleString('en-US')}</p></div> 
      <div className='detailsPAge__info__item'><span>Idiomas:</span> {countrie[0].languages.map((x,i) => <p key={i}>{x.name}</p> )}</div>
      <div className='detailsPAge__info__item'><span>Capital:</span> <p>{countrie[0].capital}</p></div>
         
       </div>
       <div className='detailsPage__population'>
-        <p><span>Población: </span>{countrie[0].population.toLocaleString('en-US')} </p>
+        <p><span>Población: </span>{countrie[0].population && countrie[0].population.toLocaleString('en-US')} </p>
       </div>
       <div className='detailesPage__button'>
         <Link to='/'> ← Volver </Link>

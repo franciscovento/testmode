@@ -1,5 +1,5 @@
 .homePage {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-position: left;
   background-repeat: no-repeat;
@@ -8,12 +8,15 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  /* transition: 0.5s ease; */
 }
 
 @media (max-width: 900px) {
   .homePage {
     background-size: contain;
+    background-position-y: 100px;
+    margin: 10px;
+    width: 95%;
+    justify-content: flex-end;
   }
 }
 
@@ -51,7 +54,6 @@
 
 .homePage-content-form button {
   width: 100px;
-  float: right;
   border: none;
   padding: 5px 0px;
   background-color: #2ebb8c;
