@@ -31,7 +31,7 @@ useEffect(()=>{
   return (
     <motion.div initial="out"  animate="in" exit="out" variants={Transitions} transition={pageTransition} className='detailsPage'>
       {countrie && 
-      <div style={{width:'95%'}}>
+      <div style={{margin:'10px'}}>
       <div className='detailsPage__titulo'>
       <h1>{countrie[0].name}</h1>
       </div>
