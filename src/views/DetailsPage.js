@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { Redirect, useParams } from 'react-router'
 import axios from 'axios';
 import './detailsPage.css'
 import { Link } from 'react-router-dom';
@@ -10,6 +10,7 @@ import {Transitions, pageTransition} from '../transitions/transitions';
 
 const DetailsPage = () => {
   const [countrie, setCountrie] = useState();
+  const [flag, setFlag] = useState(true);
 
   const {id} = useParams();
 useEffect(()=>{
@@ -18,18 +19,19 @@ useEffect(()=>{
       const url = `https://restcountries.eu/rest/v2/name/${id}?fullText=true`
       const data = await axios.get(url);
       setCountrie(data.data);
+      setFlag(true);
     }catch(e){
       console.log(e);
+      setFlag(false);
     }
   }
   DataCountries();
 },[id])
 
 
-
-
   return (
-    <motion.div initial="out"  animate="in" exit="out" variants={Transitions} transition={pageTransition} className='detailsPage'>
+   <div>
+     {flag?  <motion.div initial="out"  animate="in" exit="out" variants={Transitions} transition={pageTransition} className='detailsPage'>
       {countrie && 
       <div style={{margin:'10px'}}>
       <div className='detailsPage__titulo'>
@@ -54,13 +56,13 @@ useEffect(()=>{
       <div className='detailesPage__button'>
         <Link to='/'> ← Volver </Link>
       </div>
-      
-      
-      
-      
       </div>  
       }
-    </motion.div>
+    </motion.div>: 
+    <Redirect to='/notFound' />
+    
+    }
+   </div>
   )
 }
 

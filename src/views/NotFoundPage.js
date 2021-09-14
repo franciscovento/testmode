@@ -4,6 +4,8 @@ import { Transitions } from '../transitions/transitions'
 import { Link } from 'react-router-dom';
 import './notFoundPage.css';
 
+
+
 const NotFoundPage = () => {
   return (
     <motion.div initial="out"  animate="in" exit="out" variants={Transitions} className='notFoundPage'>
