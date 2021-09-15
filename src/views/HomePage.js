@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect} from 'react'
 import './homePage.css';
 import CountryInfo from '../components/countryInfo/CountryInfo';
 import { motion } from 'framer-motion';
 import { Transitions, pageTransition } from '../transitions/transitions';
+
+
 
 const HomePage = ({handleSearch, countries, flag}) => {
 
@@ -12,7 +14,7 @@ const HomePage = ({handleSearch, countries, flag}) => {
     const handleChangue = (e) => {
         setQuery(e.target.value)
     }
-
+    
   
     useEffect(()=>{
 
@@ -25,11 +27,14 @@ const HomePage = ({handleSearch, countries, flag}) => {
       }
     },[countries, flag])
 
+   
+
+
   return (
     <motion.div initial="out"  animate="in" exit="out" variants={Transitions} transition={pageTransition} className='homePage' style={{backgroundImage:`url(${background})`}}>
-      <div className='homePage-content'>
+      <div  className='homePage-content'>
        
-      <div className='homePage-content-form'>
+      <div  className='homePage-content-form'>
       <h3>Buscador de países</h3>
       <input type="text" onChange={handleChangue} placeholder='¿Qué país estas buscando?'/>
       <button onClick={() => handleSearch(query)}>Buscar</button>
