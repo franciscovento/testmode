@@ -1,0 +1,82 @@
+.flagsPage {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  width: 90%;
+  margin: auto;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.flagsPage-title {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.flagsPage-item {
+  width: 100%;
+  position: relative;
+  transition: 0.5s all ease;
+}
+
+.flagsPage-imgcontainer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.flagsPage-item a {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 0px;
+  font-size: 14px;
+}
+
+.flagsPage-item:hover {
+  transform: scale(1.05);
+}
+
+.flagsPage__buttonsContainer {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin: 20px 0px;
+}
+
+.flagsPage__buttonsContainer button {
+  width: 100px;
+  border: none;
+  padding: 5px 0px;
+  background-color: #2ebb8c;
+  color: white;
+  transition: 0.5s all ease;
+  cursor: pointer;
+}
+
+.flagsPage__buttonsContainer button:hover {
+  background-color: #4fcaa1;
+}
+
+.goBackHome {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  overflow: hidden;
+}
+
+.goBackHome a {
+  background-color: white;
+  text-decoration: underline;
+  color: #2ebb8c;
+  transition: 0.5s all ease;
+}
+
+.goBackHome a:hover {
+  color: #55f3be;
+}

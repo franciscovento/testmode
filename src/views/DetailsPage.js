@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Redirect, useParams } from 'react-router'
 import axios from 'axios';
 import './detailsPage.css'
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {Transitions, pageTransition} from '../transitions/transitions';
 
@@ -11,7 +11,9 @@ import {Transitions, pageTransition} from '../transitions/transitions';
 const DetailsPage = () => {
   const [countrie, setCountrie] = useState();
   const [flag, setFlag] = useState(true);
+  const history = useHistory();
 
+  
   const {id} = useParams();
 useEffect(()=>{
   const DataCountries = async ()=>{
@@ -54,7 +56,7 @@ useEffect(()=>{
         <p><span>Población: </span>{countrie[0].population && countrie[0].population.toLocaleString('en-US')} </p>
       </div>
       <div className='detailesPage__button'>
-        <Link to='/'> ← Volver </Link>
+        <button onClick={()=> history.goBack()} >← Volver</button>
       </div>
       </div>  
       }

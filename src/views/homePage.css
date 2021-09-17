@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
+  position: relative;
 }
 
 @media (max-width: 900px) {
@@ -70,4 +71,23 @@
   background-color: white;
   text-decoration: underline;
   color: #2ebb8c;
+}
+
+.lookAllFlags {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  overflow: hidden;
+  background-color: white;
+  padding: 10px;
+}
+
+.lookAllFlags a {
+  text-decoration: underline;
+  color: #2ebb8c;
+  transition: 0.5s all ease;
+}
+
+.lookAllFlags a:hover {
+  color: #55f3be;
 }

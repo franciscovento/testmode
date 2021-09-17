@@ -6,6 +6,7 @@ import HomePage from './views/HomePage';
 import DetailsPage from './views/DetailsPage';
 import NotFoundPage from './views/NotFoundPage';
 import { AnimatePresence} from 'framer-motion'
+import FlagsPage from './views/FlagsPage';
 
 
 
@@ -45,6 +46,9 @@ const handleSearch = (name) => {
        <Switch location={location} key={location.pathname} >
           <Route path='/details/:id'>
             <DetailsPage />
+          </Route>
+          <Route path='/allflags'>
+            <FlagsPage />
           </Route>
           <Route exact path='/'>
             <HomePage handleSearch={handleSearch} countries={countries} flag={flag}/>
